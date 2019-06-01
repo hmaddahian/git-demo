@@ -1,0 +1,172 @@
+hmaddahian@~/DevOps/git-demo $ ll
+total 8
+-rw-r--r--@ 1 hmaddahian  staff  59 Jun  1 15:36 README.md
+hmaddahian@~/DevOps/git-demo $ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+hmaddahian@~/DevOps/git-demo $ git add README.md 
+hmaddahian@~/DevOps/git-demo $ git status        
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   README.md
+
+hmaddahian@~/DevOps/git-demo $ git commit -m "Initial commit"
+[master (root-commit) 10f8e68] Initial commit
+ 1 file changed, 3 insertions(+)
+ create mode 100644 README.md
+hmaddahian@~/DevOps/git-demo $ git status
+On branch master
+nothing to commit, working tree clean
+hmaddahian@~/DevOps/git-demo $ atom README.md 
+hmaddahian@~/DevOps/git-demo $ 
+hmaddahian@~/DevOps/git-demo $ git status     
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+hmaddahian@~/DevOps/git-demo $ git add README.md 
+hmaddahian@~/DevOps/git-demo $ git status        
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+
+hmaddahian@~/DevOps/git-demo $ git commit -m "Adding some text"
+[master 6d50306] Adding some text
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+hmaddahian@~/DevOps/git-demo $ git status
+On branch master
+nothing to commit, working tree clean
+hmaddahian@~/DevOps/git-demo $ mate README.md 
+hmaddahian@~/DevOps/git-demo $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+hmaddahian@~/DevOps/git-demo $ git commit -am "Adding more ipsum"
+[master c4e7371] Adding more ipsum
+ 1 file changed, 5 insertions(+)
+hmaddahian@~/DevOps/git-demo $ git status
+On branch master
+nothing to commit, working tree clean
+hmaddahian@~/DevOps/git-demo $ mate index.html
+hmaddahian@~/DevOps/git-demo $ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+hmaddahian@~/DevOps/git-demo $ mate README.md 
+hmaddahian@~/DevOps/git-demo $ git add index.html 
+hmaddahian@~/DevOps/git-demo $ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+hmaddahian@~/DevOps/git-demo $ git add README.md 
+hmaddahian@~/DevOps/git-demo $ git status        
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+        new file:   index.html
+
+hmaddahian@~/DevOps/git-demo $ git commit -m "A few changes for the demo site."
+[master f31688f] A few changes for the demo site.
+ 2 files changed, 23 insertions(+), 16 deletions(-)
+ rewrite README.md (87%)
+ create mode 100644 index.html
+hmaddahian@~/DevOps/git-demo $ mate README.md     
+hmaddahian@~/DevOps/git-demo $ mate index.html 
+hmaddahian@~/DevOps/git-demo $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+hmaddahian@~/DevOps/git-demo $ git add .
+hmaddahian@~/DevOps/git-demo $ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+        modified:   index.html
+
+hmaddahian@~/DevOps/git-demo $ git commit -m "A few changes for the website."  
+[master 72fbfda] A few changes for the website.
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+hmaddahian@~/DevOps/git-demo $ mate README.md 
+hmaddahian@~/DevOps/git-demo $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+hmaddahian@~/DevOps/git-demo $ git add README.md 
+hmaddahian@~/DevOps/git-demo $ git status        
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+
+hmaddahian@~/DevOps/git-demo $ # to roll back the changes run the following command
+hmaddahian@~/DevOps/git-demo $ git reset HEAD README.md 
+Unstaged changes after reset:
+M       README.md
+hmaddahian@~/DevOps/git-demo $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+hmaddahian@~/DevOps/git-demo $ git checkout -- README.md 
+hmaddahian@~/DevOps/git-demo $ mate README.md 
+hmaddahian@~/DevOps/git-demo $ git status
+On branch master
+nothing to commit, working tree clean
+hmaddahian@~/DevOps/git-demo $ 
